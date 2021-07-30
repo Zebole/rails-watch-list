@@ -8,4 +8,23 @@
   <li>Movie 1</li>
 </u>
 
-<%= link_to "Back to index", lists_path  %>
+<br>
+
+<%= link_to "Back to index |", lists_path  %>
+<%= link_to "Create a Bookmark", new_list_bookmark_path(@list)  %>
+
+<br>
+<br>
+
+<h3>Comments</h3>
+
+<br>
+<br>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.comment %>
+    </li>
+  <% end %>
+</ul>
